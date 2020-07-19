@@ -7,18 +7,16 @@ import {
   InMemoryCache
 } from '@apollo/client';
 import { setContext } from 'apollo-link-context';
-
 // import global styles
 import GlobalStyle from './components/GlobalStyle';
-
 import * as serviceWorker from './serviceWorker';
-
 // import our routes
 import Pages from './pages';
 import { ESTA_LOGEADO } from './gql/query';
 
+
 // configure our API URI & cache
-const uri = process.env.API_URI;
+const uri = process.env.REACT_APP_API_URI;
 const httpLink = createHttpLink({ uri });
 const cache = new InMemoryCache();
 

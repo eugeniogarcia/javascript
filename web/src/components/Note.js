@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import { format } from 'date-fns';
+import { format, parseISO } from 'date-fns';
 import styled from 'styled-components';
 import { useQuery } from '@apollo/client';
 
@@ -33,6 +33,7 @@ const UserActions = styled.div`
 
 const Note = ({ note }) => {
   const { loading, error, data } = useQuery(ESTA_LOGEADO);
+
   // if the data is loading, display a loading message
   if (loading) return <p>Loading...</p>;
   // if there is an error fetching the data, display an error message
@@ -50,7 +51,7 @@ const Note = ({ note }) => {
         </MetaInfo>
         <MetaInfo>
           <em>by</em> {note.author.username} <br />
-          {format(note.createdAt, 'MMM Do YYYY')}
+          {format(parseISO(note.createdAt), 'MMM Do yyyy')}
         </MetaInfo>
         {data.isLoggedIn ? (
           <UserActions>
