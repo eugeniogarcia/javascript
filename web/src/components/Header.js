@@ -39,7 +39,7 @@ const Header = props => {
       <LogoText>Notedly</LogoText>
       {/* If logged in display a log out link, else display sign in options */}
       <UserState>
-        {data.isLoggedIn ? (
+        {data?.isLoggedIn? (
           <ButtonAsLink
             onClick={() => {
               // remove the token

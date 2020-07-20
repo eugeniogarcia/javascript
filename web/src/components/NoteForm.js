@@ -18,7 +18,7 @@ const TextArea = styled.textarea`
 
 const NoteForm = props => {
   // set the default state of the form
-  const [value, setValue] = useState({ content: props.content || '' });
+  const [value, setValue] = useState({ id: props.id_nota , content: props.content || '' });
 
   // update the state when a user types in the form
   const onChange = event => {

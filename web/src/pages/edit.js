@@ -14,9 +14,6 @@ const EditNote = props => {
   const { data: userdata } = useQuery(GET_ME);
   // define our mutation
   const [editNote] = useMutation(EDIT_NOTE, {
-    variables: {
-      id
-    },
     onCompleted: () => {
       props.history.push(`/note/${id}`);
     }
@@ -32,7 +29,7 @@ const EditNote = props => {
   }
 
   // pass the data and mutation to the form component
-  return <NoteForm content={data.note.content} action={editNote} />;
+  return <NoteForm content={data.note.content} action={editNote} id_nota={id}/>;
 };
 
 export default EditNote;
