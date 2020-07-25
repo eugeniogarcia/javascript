@@ -3,8 +3,16 @@ import Constants from 'expo-constants';
 // get the localhost ip address at runtime using the Expo manifest
 // this enables both simulator and physical device debugging with our local api
 let localhost;
-if (Constants.manifest.debuggerHost) {
-  localhost = Constants.manifest.debuggerHost.split(':').shift();
+try{
+  if (Constants.manifest.debuggerHost) {
+    localhost = Constants.manifest.debuggerHost.split(':').shift();
+  }
+  else{
+    localhost = "localhost";  
+  }
+}
+catch (exception){
+  localhost="localhost";
 }
 
 // set environment variables
