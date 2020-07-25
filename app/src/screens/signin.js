@@ -12,11 +12,11 @@ const SIGNIN_USER = gql`
   }
 `;
 
+//Para hacer el login usamos una mutación. Hemos definido arriba la query. Cuando llamemos al hook, en este caso con el método signIn, le pasaremos dos variables, email y password. Podemos también controlar el caso de error, y que hacer mientras graphql no nos responda
 const SignIn = props => {
   const [signIn, { loading, error }] = useMutation(SIGNIN_USER, {
     onCompleted: data => {
-      // store the token with a key value of `token`
-      // after the token is stored navigate to the app's main screen
+      //Guardamos el token que hemos recibido de GraphQl en el SecureStore, y navegamos a la App
       SecureStore.setItemAsync('token', data.signIn).then(
         props.navigation.navigate('App')
       );

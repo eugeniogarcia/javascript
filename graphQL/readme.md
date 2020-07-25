@@ -53,6 +53,14 @@ Finalmente utilidades para el desarrollo:
 npm install eslint eslint-config-prettier eslint-plugin-prettier prettier faker node-fetch --save-dev
 ```
 
+# Ejecutar el job
+
+```ps
+$a=pwd
+
+Start-Job -ScriptBlock {Set-Location $args[0];npm run start} -ArgumentList $a
+```
+
 # GraphQL
 
 ## Tipos
@@ -707,7 +715,7 @@ mutation{
 ```yaml
 mutation{
   signIn(username:"egzach",
-    email: "egzach.com"
+    email: "egzach@gmail.com"
     ,password: "vera1511")
 }
 ```

@@ -22,6 +22,7 @@ const GET_NOTE = gql`
   }
 `;
 
+//Aque usamos una query de GraphQL para recuperar los datos de nuestra nota. Le pasamos como argumento un id. En el Mutation el id se pasaba con el metodo que devolvia el hook. Aqui lo estamos pasando al crear el hook
 const NoteScreen = props => {
   const id = props.navigation.getParam('id');
   const { loading, error, data } = useQuery(GET_NOTE, { variables: { id } });

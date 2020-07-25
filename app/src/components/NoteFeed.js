@@ -4,20 +4,6 @@ import styled from 'styled-components/native';
 
 import NoteComponent from './Note';
 
-// our dummy data
-// const notes = [
-//   { id: 0, content: 'Giant Steps' },
-//   { id: 1, content: 'Tomorrow Is The Question' },
-//   { id: 2, content: 'Tonight At Noon' },
-//   { id: 3, content: 'Out To Lunch' },
-//   { id: 4, content: 'Green Street' },
-//   { id: 5, content: 'In A Silent Way' },
-//   { id: 6, content: 'Lanquidity' },
-//   { id: 7, content: 'Nuff Said' },
-//   { id: 8, content: 'Nova' },
-//   { id: 9, content: 'The Awakening' }
-// ];
-
 // FeedView styled-component definition
 const FeedView = styled.View`
   height: 100;
@@ -31,6 +17,13 @@ const Separator = styled.View`
   background-color: #ced0ce;
 `;
 
+/*
+Usamos una FlatList para mostrar los datos. La flatlist tiene tres propiedades:
+- data: los datos
+- keyEstractor: el key para identificar a cada item
+- podemos definir un separador para cada item
+- especificamos que se va a pintar; usamos una lambda para extraer de los datos lo que realmente nos interesa. En este caso cada item se muestra en un TouchableOpacity, de modo que será sensible al tacto; Especificamos hacia donde hay que navegar con cada item; Pasmos cada item a un control llamado NoteComponent
+*/
 const NoteFeed = props => {
   return (
     <View>

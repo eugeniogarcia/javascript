@@ -8,8 +8,7 @@ const NoteView = styled.ScrollView`
   padding: 10px;
 `;
 
-//        {format(new Date(note.createdAt), 'MMM do yyyy')}
-
+//Visualiza los datos de cada nota
 const NoteComponent = ({ note }) => {
   return (
     <NoteView>

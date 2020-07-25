@@ -7,7 +7,7 @@
     "version": "1.0.0",
     "description": "Ejemplo de aplicacion React Native",
     "privacy": "public",
-    "sdkVersion": "33.0.0",
+    "sdkVersion": "37.0.0",
     "platforms": [
       "ios",
       "android",

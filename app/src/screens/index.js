@@ -15,6 +15,7 @@ import SignIn from './signin';
 import SignUp from './signup';
 import Settings from './settings';
 
+//Agrupamos las ventanas en conjuntos de StackNavigators
 const AuthStack = createStackNavigator({
   SignIn: SignIn,
   SignUp: SignUp
@@ -39,11 +40,13 @@ const FavStack = createStackNavigator({
   Note: NoteScreen
 });
 
+//Usamos un tab Navigator con cuatro tabs. Cada tab hace referencia a cada uno de los stacks que hemos definido arriba
 const TabNavigator = createBottomTabNavigator({
   FeedScreen: {
     screen: FeedStack,
     navigationOptions: {
       tabBarLabel: 'Feed',
+      //Especificamos el icono de cada tab
       tabBarIcon: ({ tintColor }) => (
         <MaterialCommunityIcons name="home" size={24} color={tintColor} />
       )
@@ -78,6 +81,8 @@ const TabNavigator = createBottomTabNavigator({
   }
 });
 
+//Tres ventanas, por defecto se mostrará AuthLoading
+//El switch navigator hace que se vea solo una de las ventanas a un tiempo, sin menu con boton de vuelta
 const SwitchNavigator = createSwitchNavigator(
   {
     AuthLoading: AuthLoading,
@@ -88,5 +93,5 @@ const SwitchNavigator = createSwitchNavigator(
     initialRouteName: 'AuthLoading'
   }
 );
-
+//Arrancamos la app con el switch navigator
 export default createAppContainer(SwitchNavigator);

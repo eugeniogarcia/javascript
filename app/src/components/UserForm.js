@@ -41,10 +41,12 @@ const Link = styled.Text`
 `;
 
 const UserForm = props => {
+  //Define tres estados para asociar a los controles del formulario
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [username, setUsername] = useState();
 
+  //define la función que llama a GraphQL. en action tenemos que pasar un hook de GraphQL; Pasamos unos argumentos, variables en la llamada
   const handleSubmit = () => {
     props.action({
       variables: {
@@ -55,6 +57,7 @@ const UserForm = props => {
     });
   };
 
+  //Y aquí el formularion propiamente dicho. Los contrles actualizan el estado, y muestran el estado
   return (
     <FormView>
       <FormLabel>Email</FormLabel>

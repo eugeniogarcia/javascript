@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.0.2",
+    "@react-native-community/masked-view": "^0.1.10",
     "apollo-link-context": "^1.0.20",
     "date-fns": "^2.15.0",
     "expo": "~38.0.8",

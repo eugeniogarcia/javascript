@@ -3,6 +3,7 @@ import * as SecureStore from 'expo-secure-store';
 
 import Loading from '../components/Loading';
 
+//Este componente comprueba en el SecureStore si hay un token, si lo hay navega a App, sino a Auth. En el switchnavigator se han definido estas dos páginas
 const AuthLoading = props => {
   const checkLoginState = async () => {
     // retrieve the value of the token
@@ -12,7 +13,7 @@ const AuthLoading = props => {
     props.navigation.navigate(userToken ? 'App' : 'Auth');
   };
 
-  // call checkLoginState as soon as the component mounts
+  //Cuando se haya creado el componente, hace una comprobación del estado
   useEffect(() => {
     checkLoginState();
   });
